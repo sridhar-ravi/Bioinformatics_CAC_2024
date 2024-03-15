@@ -1,28 +1,6 @@
-# Introduction to Bioinformatics CAC 2023
+# Introduction to HPC and Bioinformatics CAC 2024
 
-# Class Activity #1 – Working with Modules
-
-If you have not done yet, ssh to your account on Frontenac or Alliance cluster eg: Graham or Cedar
-
-```
-ssh -X saxxxxx@login.cac.queensu.ca
-ssh -X username@graham.computecanada.ca
-```
-
-Create a folder in your `home` or `scratch` called bioinformatics and go into it
-Type the following command in your terminal to see which versions of `samtools` avaible on out software stack
-```
-module spider samtools
-module load samtools
-module list
-```
-Now switch to `samtools` version `1.16.1` using the `module load` command.
-Try loading module `blast+`
-You can also use module spider with wildcard `$ module -r spider '.*blast.*'. Now let’s see if we have a module called “Bioconductor”
-
-Let try loading `busco` and use command `module list` to view all loaded modules
-
-# Class Activity #2 – Installing python packages
+# Class Activity #1 – Installing python packages
 
 DendroPy is a Python library for phylogenetic computing https://dendropy.org/index.html
 
@@ -39,7 +17,7 @@ python -c "import dendropy; print(dendropy.__version__)"
 ```
 Create a new virtual environment and install packages using 'requirements.txt'
 
-# Class Activity #3 - Installing software using Apptainer
+# Class Activity #2 - Installing software using Apptainer
 
 Search for containers https://hub.docker.com/
 
@@ -75,7 +53,7 @@ apptainer build ubuntu_test_git.sif my_test_def_file.def
 apptainer build --sandbox ubuntu_sandbox ubuntu_test_git.sif
 
 ```
-# Class Activity #4 – Using mdsum
+# Class Activity #3 – Using mdsum
 
 Lets download a file and verify integrity
      
@@ -92,7 +70,7 @@ Split fasta file using pyfasta (hint: source ~/ENV/bin/activate)
 ```
 pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 ```
-# Class Activity #5 – Text editing
+# Class Activity #4 – Text editing
 
 Clone repository `git clone https://github.com/sridhar-ravi/intro_to_bioinformatics_cac_2023.git`
 
