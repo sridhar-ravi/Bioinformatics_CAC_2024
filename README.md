@@ -2,6 +2,12 @@
 
 # Class Activity #1 – Installing python packages
 
+Searching for available python packages on Alliance and Frontenac cluster.
+```
+avail_wheels numpy
+avail_wheels numpy --all-version
+avail_wheels numpy pandas --all-version
+```
 DendroPy is a Python library for phylogenetic computing https://dendropy.org/index.html
 
 Find all available versions of `dendropy` and `pyfasta` in the wheelhouse
@@ -72,7 +78,7 @@ pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 ```
 # Class Activity #4 – Text editing
 
-Clone repository `git clone https://github.com/sridhar-ravi/intro_to_bioinformatics_cac_2023.git`
+Clone repository `git clone https://github.com/sridhar-ravi/Introduction_to_HPC_Bioinformatics_2024.git`
 
 View fasta header
 
