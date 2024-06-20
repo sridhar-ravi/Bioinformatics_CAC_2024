@@ -10,9 +10,9 @@ avail_wheels numpy pandas --all-version
 ```
 DendroPy is a Python library for phylogenetic computing https://dendropy.org/index.html
 
-Find all available versions of `dendropy` and `pyfasta` in the wheelhouse
+Find all available versions of `dendropy` and `fastasplit` in the wheelhouse
 
-Install `dendropy` and `pyfasta`
+Install `dendropy` and `fastasplit`
 
 Run `pip freeze` to generate `requirements.txt` file
 
@@ -22,6 +22,8 @@ python -c "import dendropy"
 python -c "import dendropy; print(dendropy.__version__)"
 ```
 Create a new virtual environment and install packages using 'requirements.txt'
+
+https://docs.alliancecan.ca/wiki/Python/en
 
 # Class Activity #2 - Installing software using Apptainer
 
@@ -48,7 +50,12 @@ Bootstrap: docker
 From: ubuntu:22.04
 Stage: build
 %post
-    apt-get update && apt-get install -y git
+
+  apt-get update && apt-get -y upgrade
+  ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+  export DEBIAN_FRONTEND=noninteractive
+  apt-get -y install fastani
+
 ```
 
 Now build a container from the recipe file/definition file
@@ -59,6 +66,7 @@ apptainer build ubuntu_test_git.sif my_test_def_file.def
 apptainer build --sandbox ubuntu_sandbox ubuntu_test_git.sif
 
 ```
+For more information https://docs.alliancecan.ca/wiki/Apptainer/en
 # Class Activity #3 – Using mdsum
 
 Lets download a file and verify integrity
