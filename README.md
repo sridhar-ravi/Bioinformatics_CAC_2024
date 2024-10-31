@@ -1,4 +1,45 @@
-# Introduction to HPC and Bioinformatics CAC 2024
+# Introduction to Bioinformatics CAC 2024
+
+# Class Activity #1 – Standard Environment and modules
+If you have not done yet, ssh to your account on Frontenac or Alliance cluster eg: Graham or Cedar. If you don't have an Alliance account, use the guest account from your moodle. 
+
+```
+ssh -X saxxxxxx@login.cac.queensu.ca
+ssh -X username@graham.computecanada.ca
+ssh -X userxxxx@coss-a.c3.ca
+```
+
+Create a folder in your `home` or `scratch` called bioinformatics
+
+Type `$module list` to find default Standard Environment​
+
+`StdEnv/2023` uses GCC 12.3.0, Intel 2023.1, and Open MPI 4.1.5 as defaults
+
+`StdEnv/2020` uses GCC 9.3.0, Intel 2020.1, and Open MPI 4.0.3 as defaults
+
+    GCC 9.3 => GCC 12.3
+    CUDA 11 => CUDA 12
+
+Type the following command in your terminal to see which versions of `samtools` avaible on out software stack
+```
+module spider samtools
+module load samtools
+module list
+```
+Now switch to `samtools` version `1.18` using the `module load` command.
+Try loading module `blast+`
+You can also use module spider with wildcard `module -r spider '.*blast.*'`. Now let’s see if we have a module called “Bioconductor”
+
+Let try loading `busco` and use command `module list` to view all loaded modules. Pay attention to `StdEnv`.
+
+Useful resources:
+
+https://docs.alliancecan.ca/wiki/Standard_software_environments
+
+https://docs.alliancecan.ca/wiki/Standard_software_environments
+
+
+
 
 # Class Activity #1 – Installing python packages
 
