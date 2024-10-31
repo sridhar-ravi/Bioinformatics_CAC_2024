@@ -36,12 +36,10 @@ Useful resources:
 
 https://docs.alliancecan.ca/wiki/Standard_software_environments
 
-https://docs.alliancecan.ca/wiki/Standard_software_environments
+https://docs.alliancecan.ca/wiki/Utiliser_des_modules/en
 
 
-
-
-# Class Activity #1 – Installing python packages
+# Class Activity #2 – Installing python packages
 
 Searching for available python packages on Alliance and Frontenac cluster.
 ```
