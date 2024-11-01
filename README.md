@@ -64,7 +64,23 @@ Create a new virtual environment and install packages using 'requirements.txt'
 
 https://docs.alliancecan.ca/wiki/Python/en
 
-# Class Activity #2 - Installing software using Apptainer
+# Class Activity #3 - Installing R packages
+
+By default, R packages are installed under `$HOME/R/`
+
+```
+module load r/4.3.1
+mkdir -p ~/.local/R/$EBVERSIONR/
+export R_LIBS=~/.local/R/$EBVERSIONR/
+R -e 'install.packages("ggplot2", repos="https://cloud.r-project.org/")'
+```
+To install packages after loading R
+```
+R
+> install.packages("ggplot2")
+```
+
+# Class Activity #4 - Installing software using Apptainer
 
 Search for containers https://hub.docker.com/
 
@@ -106,7 +122,7 @@ apptainer build --sandbox ubuntu_sandbox ubuntu_test_git.sif
 
 ```
 For more information https://docs.alliancecan.ca/wiki/Apptainer/en
-# Class Activity #3 – Using mdsum
+# Class Activity #4 – Using mdsum
 
 Lets download a file and verify integrity
      
@@ -123,7 +139,7 @@ Split fasta file using pyfasta (hint: source ~/ENV/bin/activate)
 ```
 pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 ```
-# Class Activity #4 – Text editing
+# Class Activity #5 – Text editing
 
 Clone repository `git clone https://github.com/sridhar-ravi/Introduction_to_HPC_Bioinformatics_2024.git`
 
