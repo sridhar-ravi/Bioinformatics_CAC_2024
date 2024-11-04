@@ -4,7 +4,8 @@
 If you have not done yet, ssh to your account on Frontenac or Alliance cluster eg: Graham or Cedar. If you don't have an Alliance account, use the guest account from your moodle. 
 
 ```
-ssh -X saxxxxxx@login.cac.queensu.ca
+ssh -X hpcxxxx@login.cac.queensu.ca
+ssh -X sa13xxxx@login.cac.queensu.ca
 ssh -X username@graham.computecanada.ca
 ssh -X userxxxx@coss-a.c3.ca
 ```
@@ -42,23 +43,30 @@ Searching for available python packages on Alliance and Frontenac cluster.
 ```
 avail_wheels numpy
 avail_wheels numpy --all-version
-avail_wheels numpy pandas --all-version
+avail_wheels numpy pandas biopython --all-version
 ```
-DendroPy is a Python library for phylogenetic computing https://dendropy.org/index.html
 
-Find all available versions of `dendropy` and `fastasplit` in the wheelhouse
+Find all available versions of `biopython` and `fastasplit` in the wheelhouse
 
-Install `dendropy` and `fastasplit`
+Install `biopython` and `fastasplit` on python/3.10 with option `-- no-index'
 
 Run `pip freeze` to generate `requirements.txt` file
 
 Check your installation:
 ```
-python -c "import dendropy"
-python -c "import dendropy; print(dendropy.__version__)"
+python -c "import Bio"
+python -c "import Bio; print(Bio.__version__)"
 
 ```
-Create a new virtual environment and install packages using 'requirements.txt'
+Create a new virtual environment and install packages using `requirements.txt`
+
+Possible error while resolving dependencies
+```
+ERROR: Could not find a version that satisfies the requirement pytorch (from versions: none)
+ERROR: No matching distribution found for pytorch
+```
+
+`pip install -r requiremets.txt --no-deps`
 
 https://docs.alliancecan.ca/wiki/Python/en
 
@@ -137,7 +145,13 @@ Split fasta file using pyfasta (hint: source ~/ENV/bin/activate)
 ```
 pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 ```
-# Class Activity #6 – Text editing
+# Class Activity #6 – screen terminal multiplexer
+
+`screen -S copy_data` to start a screen session
+`screen -ls` list active screen session
+
+
+# Class Activity #7 – Text editing
 
 Clone repository `git clone https://github.com/sridhar-ravi/Introduction_to_HPC_Bioinformatics_2024.git`
 
@@ -154,6 +168,6 @@ Print transcript id and chromosomal position
 ```
 awk -F '[ |,]' '{ if ($0 ~ /^>/) { print $1"|"$3;} else { print $0;}}'
 ```
-# Class Activity #6 – Job submission
+# Class Activity #8 – Job submission
 
 Copy *.sam files from `/global/project/Workshop2023/IntroBioInfo/`
