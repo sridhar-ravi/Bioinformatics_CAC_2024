@@ -17,9 +17,6 @@ Type `$module list` to find default Standard Environment​
 
 `StdEnv/2020` uses GCC 9.3.0, Intel 2020.1, and Open MPI 4.0.3 as defaults
 
-    GCC 9.3 => GCC 12.3
-    CUDA 11 => CUDA 12
-
 Type the following command in your terminal to see which versions of `samtools` avaible on out software stack
 ```
 module spider samtools
@@ -59,6 +56,7 @@ Check your installation:
 ```
 python -c "import dendropy"
 python -c "import dendropy; print(dendropy.__version__)"
+
 ```
 Create a new virtual environment and install packages using 'requirements.txt'
 
@@ -122,7 +120,7 @@ apptainer build --sandbox ubuntu_sandbox ubuntu_test_git.sif
 
 ```
 For more information https://docs.alliancecan.ca/wiki/Apptainer/en
-# Class Activity #4 – Using mdsum
+# Class Activity #5 – Using mdsum
 
 Lets download a file and verify integrity
      
@@ -139,7 +137,7 @@ Split fasta file using pyfasta (hint: source ~/ENV/bin/activate)
 ```
 pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 ```
-# Class Activity #5 – Text editing
+# Class Activity #6 – Text editing
 
 Clone repository `git clone https://github.com/sridhar-ravi/Introduction_to_HPC_Bioinformatics_2024.git`
 
