@@ -148,7 +148,12 @@ pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 # Class Activity #6 – screen terminal multiplexer
 
 `screen -S copy_data` to start a screen session
+
 `screen -ls` list active screen session
+
+`ctrl` + a + d to minimize and run process in the background
+
+`screen -dr copy_data` attach screen session
 
 
 # Class Activity #7 – Text editing
