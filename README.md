@@ -62,8 +62,8 @@ Create a new virtual environment and install packages using `requirements.txt`
 
 Possible error while resolving dependencies
 ```
-ERROR: Could not find a version that satisfies the requirement pytorch (from versions: none)
-ERROR: No matching distribution found for pytorch
+ERROR: Could not find a version that satisfies the requirement torch (from versions: none)
+ERROR: No matching distribution found for torch
 ```
 
 `pip install -r requiremets.txt --no-deps`
@@ -122,9 +122,10 @@ Stage: build
 Now build a container from the recipe file/definition file
 
 ```
-apptainer build ubuntu_test_git.sif my_test_def_file.def
+apptainer build fastani.sif fastani.def
 
-apptainer build --sandbox ubuntu_sandbox ubuntu_test_git.sif
+apptainer shell fastani.sif
+Apptainer> fastANI --version
 
 ```
 For more information https://docs.alliancecan.ca/wiki/Apptainer/en
@@ -144,6 +145,14 @@ md5sum -c 18S_fungal_sequences.tar.gz.md5
 Split fasta file using pyfasta (hint: source ~/ENV/bin/activate)
 ```
 pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
+
+md5sum *.fastq > md5.txt​
+
+md5sum –c md5.txt​
+
+sha256sum *.fastq > sha256.txt​
+
+sha256sum –c sha256.txt​
 ```
 # Class Activity #6 – screen terminal multiplexer
 
@@ -153,7 +162,7 @@ pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 
 `ctrl` + a + d to minimize and run process in the background
 
-`screen -dr copy_data` attach screen session
+`screen -r copy_data` attach screen session
 
 
 # Class Activity #7 – Text editing
@@ -175,4 +184,4 @@ awk -F '[ |,]' '{ if ($0 ~ /^>/) { print $1"|"$3;} else { print $0;}}'
 ```
 # Class Activity #8 – Job submission
 
-Copy *.sam files from `/global/project/Workshop2023/IntroBioInfo/`
+Copy *.sam files from `/global/project/Workshop2024/IntroBioInfo/`
