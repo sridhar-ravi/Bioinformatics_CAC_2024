@@ -1,6 +1,6 @@
 #!/bin/bash
-##SBATCH --account=teaching
-##SBATCH --reservation=teaching
+#SBATCH --account=teaching
+#SBATCH --reservation=teaching
 ##SBATCH --ntasks=4               # number of MPI processes
 #SBATCH --cpus-per-task 3
 #SBATCH --mem-per-cpu=4G      # memory; default unit is megabytes
