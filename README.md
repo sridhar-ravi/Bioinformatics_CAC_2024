@@ -70,6 +70,13 @@ ERROR: No matching distribution found for torch
 
 https://docs.alliancecan.ca/wiki/Python/en
 
+To make the virtual environment visible on Jupyterhub portal
+
+```mkdir -p ~/.local/share/jupyter/kernels
+pip install --no-index ipykernel
+python -m ipykernel install --user --name my_py_env --display-name "pipeline_1 python
+kernel"
+```
 # Class Activity #3 - Installing R packages
 
 By default, R packages are installed under `$HOME/R/`
@@ -93,9 +100,9 @@ Search for containers https://hub.docker.com/
 If you decide to build an image make sure to set `cache` and `tmp` for `apptainer` in a filesystem where you have read/write permission 
 
 ```
-mkdir -p /scratch/$USER/apptainer/{cache,tmp}
-export APPTAINER_CACHEDIR="/scratch/$USER/apptainer/cache"
-export APPTAINER_TMPDIR="/scratch/$USER/apptainer/tmp"
+mkdir -p /global/scratch/$USER/apptainer/{cache,tmp}
+export APPTAINER_CACHEDIR="/global/scratch/$USER/apptainer/cache"
+export APPTAINER_TMPDIR="/global/scratch/$USER/apptainer/tmp"
 ```
 
 Some tools such as `qiime2` are hosted on their own repository https://quay.io/repository/qiime2/core?tab=tags
@@ -103,6 +110,12 @@ Some tools such as `qiime2` are hosted on their own repository https://quay.io/r
 ````
 module load apptainer
 apptainer build qiime2-2023.5.sif docker://quay.io/qiime2/core:2023.5
+````
+Exceptions include licensed software that does not allow distribution eg https://docs.nvidia.com/clara/parabricks/latest/index.html
+
+````
+module load apptainer
+apptainer build parabrick-4.6.0.sif docker://nvcr.io/nvidia/clara/clara-parabricks:4.6.0-1
 ````
 
 Recipe file/definition file
@@ -184,4 +197,4 @@ awk -F '[ |,]' '{ if ($0 ~ /^>/) { print $1"|"$3;} else { print $0;}}'
 ```
 # Class Activity #8 – Job submission
 
-Copy *.sam files from `/global/project/Workshop2024/IntroBioInfo/`
+Copy *.sam files from `/global/teaching-project/sg4898000/IntroBioinformtaics`
