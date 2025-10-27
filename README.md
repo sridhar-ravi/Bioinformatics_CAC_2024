@@ -86,7 +86,7 @@ mkdir -p ~/.local/share/jupyter/kernels
 pip install --no-index ipykernel
 python -m ipykernel install --user --name my_py_env --display-name "pipeline_1 python kernel"
 ```
-JupyterHub portal on Frontenac `https://ood-frnt.cac.queensu.ca/pun/sys/dashboard`. On the Aliiance clusters use https://docs.alliancecan.ca/wiki/JupyterHub#JupyterHub_on_clusters or https://ondemand.sharcnet.ca/
+JupyterHub portal on Frontenac https://ood-frnt.cac.queensu.ca/pun/sys/dashboard. On the Aliiance clusters use https://docs.alliancecan.ca/wiki/JupyterHub#JupyterHub_on_clusters or https://ondemand.sharcnet.ca/
 
 # Class Activity #4 - Installing R packages
 
