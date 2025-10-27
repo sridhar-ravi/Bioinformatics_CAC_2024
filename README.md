@@ -36,8 +36,17 @@ https://docs.alliancecan.ca/wiki/Standard_software_environments
 
 https://docs.alliancecan.ca/wiki/Utiliser_des_modules/en
 
+# Class Activity #2 – screen terminal multiplexer
 
-# Class Activity #2 – Installing python packages
+`screen -S python_install` to start a screen session
+
+`screen -ls` list active screen session
+
+`ctrl` + a + d to minimize and run process in the background
+
+`screen -r python_install` attach screen session
+
+# Class Activity #3 – Installing python packages
 
 Searching for available python packages on Alliance and Frontenac cluster.
 ```
@@ -72,12 +81,14 @@ https://docs.alliancecan.ca/wiki/Python/en
 
 To make the virtual environment visible on Jupyterhub portal
 
-```mkdir -p ~/.local/share/jupyter/kernels
-pip install --no-index ipykernel
-python -m ipykernel install --user --name my_py_env --display-name "pipeline_1 python
-kernel"
 ```
-# Class Activity #3 - Installing R packages
+mkdir -p ~/.local/share/jupyter/kernels
+pip install --no-index ipykernel
+python -m ipykernel install --user --name my_py_env --display-name "pipeline_1 python kernel"
+```
+JupyterHub portal on Frontenac `https://ood-frnt.cac.queensu.ca/pun/sys/dashboard`. On the Aliiance clusters use https://docs.alliancecan.ca/wiki/JupyterHub#JupyterHub_on_clusters or https://ondemand.sharcnet.ca/
+
+# Class Activity #4 - Installing R packages
 
 By default, R packages are installed under `$HOME/R/`
 
@@ -92,8 +103,17 @@ To install packages after loading R
 R
 > install.packages("ggplot2")
 ```
+Open a R session and view sourced library path
+
+```
+> .libPaths()
+[1] "/global/teaching-home/sa4898003/.local/R/4.3.1"
+[2] "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/r/4.3.1/lib64/R/library"
+```
+
 RStudio portal on Frontenac `https://ood-frnt.cac.queensu.ca/pun/sys/dashboard`. On the Aliiance clusters use https://docs.alliancecan.ca/wiki/JupyterHub#JupyterHub_on_clusters or https://ondemand.sharcnet.ca/
-# Class Activity #4 - Installing software using Apptainer
+
+# Class Activity #5 - Installing software using Apptainer
 
 Search for containers https://hub.docker.com/
 
@@ -142,7 +162,7 @@ Apptainer> fastANI --version
 
 ```
 For more information https://docs.alliancecan.ca/wiki/Apptainer/en
-# Class Activity #5 – Using mdsum
+# Class Activity #6 – Using mdsum
 
 Lets download a file and verify integrity
      
@@ -156,27 +176,16 @@ md5sum -c 18S_fungal_sequences.tar.gz.md5
 ```
    
 Split fasta file using pyfasta (hint: source ~/ENV/bin/activate)
+
 ```
+git clone https://github.com/sridhar-ravi/Bioinformatics_CAC_2025.git
+cd Bioinformatics_CAC_2025/
 pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
-
 md5sum *.fastq > md5.txt​
-
 md5sum –c md5.txt​
-
 sha256sum *.fastq > sha256.txt​
-
 sha256sum –c sha256.txt​
 ```
-# Class Activity #6 – screen terminal multiplexer
-
-`screen -S copy_data` to start a screen session
-
-`screen -ls` list active screen session
-
-`ctrl` + a + d to minimize and run process in the background
-
-`screen -r copy_data` attach screen session
-
 
 # Class Activity #7 – Text editing
 
