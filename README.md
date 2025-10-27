@@ -110,6 +110,9 @@ Open a R session and view sourced library path
 [1] "/global/teaching-home/sa4898003/.local/R/4.3.1"
 [2] "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/r/4.3.1/lib64/R/library"
 ```
+Add a custom library path
+
+`> .libPaths(c("/path/to/your/library", .libPaths()))`
 
 RStudio portal on Frontenac `https://ood-frnt.cac.queensu.ca/pun/sys/dashboard`. On the Aliiance clusters use https://docs.alliancecan.ca/wiki/JupyterHub#JupyterHub_on_clusters or https://ondemand.sharcnet.ca/
 
