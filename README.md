@@ -59,6 +59,16 @@ Find all available versions of `biopython` and `fastasplit` in the wheelhouse
 
 Install `biopython` and `fastasplit` on python/3.10 with option `-- no-index'
 
+```
+ml StdEnv/2023
+ml python/3.11
+virtualenv pipeline_1_py311_lab2
+source pipeline_1_py311_lab2/bin/activate
+pip install -r requirements_pipeline1_py311.txt --no-index
+pip list
+
+```
+
 Run `pip freeze` to generate `requirements.txt` file
 
 Check your installation:
