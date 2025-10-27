@@ -1,12 +1,12 @@
 # Introduction to Bioinformatics CAC 2024
 
 # Class Activity #1 – Standard Environment and modules
-If you have not done yet, ssh to your account on Frontenac or Alliance cluster eg: Graham or Cedar. If you don't have an Alliance account, use the guest account from your moodle. 
+ssh to your account on Frontenac or one of the Alliance cluster eg: Nibi, Fir, Narval or Rorqual. If you don't have an Alliance account, use the guest or student account. 
 
 ```
 ssh -X hpcxxxx@login.cac.queensu.ca
 ssh -X sa13xxxx@login.cac.queensu.ca
-ssh -X username@graham.computecanada.ca
+ssh -X username@nibi.alliancecan.ca
 ssh -X userxxxx@coss-a.c3.ca
 ```
 
@@ -85,7 +85,7 @@ To install packages after loading R
 R
 > install.packages("ggplot2")
 ```
-
+RStudio portal on Frontenac `https://ood-frnt.cac.queensu.ca/pun/sys/dashboard`. On the Aliiance clusters use https://docs.alliancecan.ca/wiki/JupyterHub#JupyterHub_on_clusters or https://ondemand.sharcnet.ca/
 # Class Activity #4 - Installing software using Apptainer
 
 Search for containers https://hub.docker.com/
