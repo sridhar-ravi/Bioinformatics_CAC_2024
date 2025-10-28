@@ -1,4 +1,4 @@
-# Introduction to Bioinformatics CAC 2024
+# Introduction to Bioinformatics CAC 2025
 
 # Class Activity #1 – Standard Environment and modules
 ssh to your account on Frontenac or one of the Alliance cluster eg: Nibi, Fir, Narval or Rorqual. If you don't have an Alliance account, use the guest or student account. 
@@ -59,17 +59,17 @@ Find all available versions of `biopython` and `fastasplit` in the wheelhouse
 
 Install `biopython` and `fastasplit` on python/3.10 with option `-- no-index'
 
+Run `pip freeze` to generate `requirements.txt` file
+
 ```
 ml StdEnv/2023
 ml python/3.11
-virtualenv pipeline_1_py311_lab2
-source pipeline_1_py311_lab2/bin/activate
-pip install -r requirements_pipeline1_py311.txt --no-index
-pip list
+virtualenv pipeline_1_py311
+source pipeline_1_py311/bin/activate
+pip install  biopython fastasplit --no-index
+pip freeze > requirements.txt
 
 ```
-
-Run `pip freeze` to generate `requirements.txt` file
 
 Check your installation:
 ```
@@ -193,7 +193,7 @@ Split fasta file using pyfasta (hint: source ~/ENV/bin/activate)
 ```
 git clone https://github.com/sridhar-ravi/Bioinformatics_CAC_2025.git
 cd Bioinformatics_CAC_2025/
-pyfasta split -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
+fastasplit -n 6 Triticum_aestivum_subset.IWGSC.cds.all.fa
 md5sum *.fastq > md5.txt​
 md5sum –c md5.txt​
 sha256sum *.fastq > sha256.txt​
